@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+ }
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+.navbar, footer {
+  height: 10vh;
+}
+
+.row-count h2, h3, h4 {
+    color: #fff;
+    text-align: justify;
+    padding-right: 7vw;
+    overflow: hidden;
+}
+
+#header-underlined {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 700px) {
+    .row-count h2, h3, h4 {
+        text-align: center;
+    }
+}
+
+
+.row-count {
+    position: absolute;
+}
+
+.form-results {
+    display: unset;
+}
+
+/* NAVIGATION BAR RULES */
+
+.navbar{
+    flex: 1;
+    background-color: darkgoldenrod;
+    justify-content: space-between;
+  }
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 2vw;
+    padding: 1vw;
+
+
+  }
+
+.right{
+    text-align: right;
+    flex: 2;
+    margin-top: 2vw;
+}
+
+.left {
+    position: absolute;
+    left: 0;
+    text-align: left;
+    margin-top: 2vw;
+    margin-left: 3vw;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+  }
+
+/* Hide the link that should open and close the "nav-navbar" on small screens */
+.bar-icon {
+    color: #f1f1f1;
+    display: none;
+}
+
+/* When the screen is less than 700 pixels wide, hide all links, except for the the bar icon (.bar-icon),
+ which should open and close the "nav-navbar" */
+@media (max-width: 700px) {
+  .nav-navbar .right li:not(:last-child) {
+      display: none;
+  }
+  .nav-navbar .right li .bar-icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the "nav-navbar" with JavaScript when the user clicks on the bar icon (.bar-icon).
+   This class makes the "nav-navbar" look good on small screens (display the links vertically instead of horizontally) */
+@media (max-width: 700px) {
+  .nav-navbar.responsive {position: relative;}
+  .nav-navbar.responsive .right li .bar-icon {
+    position: absolute;
+    right: 1.3rem;
+    top: 1.3rem;
+  }
+  .nav-navbar.responsive .right li {
+    float: none;
+    display: block;
+    text-align: right;
+    margin-right: 3rem;
+  }
+
+  .nav-navbar.responsive .left li{
+      display: none;
+  }
+}
+
+/* Font Awesome Search Symbol */
+#fa-search {
+    font-size: 13px;
+    color: #fff;
+    cursor:pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+#submit-button {
+    cursor:pointer;
+}
+
+
+nav h3 {
+    flex: 1;
+    text-align: left;
+
+}
+
+nav h3 a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+}
+
+/* SCROLL TO TOP BUTTON */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 4vw;
+
+  background-color: #555555;
+  color: white;
+  cursor: pointer;
+  padding: 1.2vw;
+  border-radius: 5vw;
+
+}
+
+#myBtn:hover {
+  background-color: darkgoldenrod;
+}
+
+
+/* OVERLAY RULES */
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 6%;
+  width: 100%;
+  text-align: left;
+  margin-top: 3vw;
+
+}
+
+.overlay-content h2 {
+   color: #ffffff;
+   padding-top: 2vw;
+   padding-bottom: 2vw;
+   text-align: center;
+}
+
+.fulltext-search {
+    flex: 1;
+    margin-left: 5vw;
+    padding-bottom: 3vw;
+    width: 20vw;
+}
+
+form {
+    flex: 1;
+    margin-left: 4vw;
+}
+
+#fulltext{
+    width: 15rem;
+}
+
+label {
+  color: #818181;
+}
+
+select {
+    width: 15rem;
+    display: flex;
+}
+
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 1vw;
+  right: 2.5vw;
+  font-size: 40px;
+}
+
+@media (max-width: 700px) {
+  .overlay a {font-size: 20px
+  }
+
+}
+
+/* FOOTER RULES */
+
+.footer {
+      flex: 1;
+      align-items: center;
+      padding: 2%;
+      background-color: #999999;
+  }
+
+.main {
+      padding: 8%;
+      background-color: #555555;
+      display: flex;
+      flex: 1;
+      min-height: 90vh
+  }
+
+.portrait-info {
+     background-color: #888888;
+     padding: 8%;
+     flex: 1;
+  }
+
+.portrait-title {
+    padding-bottom: 1vw;
+}
+
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.col {
+    align-items: center;
+    padding: 1vw;
+    flex: 1;
+  }
+
+.col h2 {
+    color: #f1f1f1;
+}
+
+
+#portrait-left {
+    width: 12.5rem;
+}
+
+#portrait-right {
+    max-width: 25rem;
+}
+
+.col ul {
+    color: #fff;
+  }
+
+.col img {
+    width: 100%;
+}
+
+
+
+.results-wrapper {
+    padding-top: 10vw;
+}
+
+.results-wrapper a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.results-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.figcaption {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+
+.results-wrapper-single a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.results-wrapper-single a:hover {
+    text-decoration: underline;
+}
+
+.openseadragon-container {
+      width: 20rem;
+      height: 30rem;
+  }
+
+.figcaption, .imglink {
+    display: inline-block;
+    inline-size: 19rem;
+}
+
+.description-para {
+    text-align: justify;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other
+ instead of next to each other */
+@media (max-width: 700px) {
+  .navbar, .main, .col, .footer {
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+  }
+
+  .col {
+      flex: 1;
+    }
+
+  .row {
+      flex-direction: column
+  }
+
+  .row-count {
+      position: absolute;
+      z-index: 1;
+  }
+
+}
+
+
+h1{
+color: #fff;
+font-size:4.5vw;
+padding: 10px;
+}
+
+p{
+color: #fff;
+line-height: normal;
+padding: 10px;
+}
+
+.home{
+   text-align: justify;
+}
+
+/*.home-div {
+  width: 20rem;
+  height: 25rem;
+  overflow: hidden;
+  margin-left: 1.5rem;
+}*/
+
+.img-source {
+  text-decoration: none;
+}
+
+#sub-heading-home {
+    color: #f1f1f1;
+}
+
+/* Scrollable Gallery */
+
+.gallery-wrap {
+     flex: 2;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+ }
+
+ .gallery {
+     width: 30vw;
+     display: flex;
+     overflow: scroll;
+     overflow-y: hidden;
+
+ }
+
+ .gallery div {
+     width: 15vw;
+     height: 30vw;
+     display: grid;
+     grid-gap: 1px;
+     padding: 1px;
+     flex: none;
+
+ }
+
+
+ .gallery div img {
+     width: 18vw;
+     height: 30vw;
+     object-fit: contain;
+     /*filter: grayscale(100%);*/
+     transition: transform 0.5s;
+ }
+
+ .gallery::-webkit-scrollbar {
+     display: none;
+ }
+
+
+ #backBtn, #nextBtn {
+    cursor: pointer;
+    font-size: 4vw;
+    color: #ffffff;
+    display: flex;
+    margin: 2vw;
+ }
+
+ .gallery div img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+ }
+
+/* Section Column Portrait Left */
+
+.results-wrapper {
+     width:100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+.digitalisate-wrap {
+    overflow: hidden;
+}
+
+
+
+div {
+  /*display: flex;*/
+  align-items: center;
+  /*flex-direction: column;*/
+  position: relative;
+}
+
+a {
+  display: inline-block;
+  word-break: break-all;
+    color: #f1f1f1;
+}
+
+
+/* QUERY BUTTON RULES */
+#filtersubmit {
+  position: relative;
+  z-index: 1;
+  left: -25px;
+  top: 1px;
+  color: #7B7B7B;
+  cursor: none;
+  width: 0;
+}
+
+#not-found {
+    color: #f1f1f1;
+}
